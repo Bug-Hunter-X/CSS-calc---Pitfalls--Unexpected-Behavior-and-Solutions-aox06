@@ -1,0 +1,21 @@
+The solution involves carefully considering units and operator precedence in `calc()`:
+
+```css
+/* Correct usage: */
+.element {
+  width: calc(50% - 10px); /* Units are crucial! */
+}
+
+/* Correct complex calculation: */
+.element {
+  width: calc((100vw - 20px) / 2); /* Parenthesis for correct order */
+}
+
+/* Avoid properties incompatible with dynamic values generated from calc*/
+.another-element {
+  /* May not work as expected depending on the property and browser */
+  /* background-size: calc(100% - 50px);  */
+}
+```
+
+Always double-check your `calc()` results and account for potential browser-specific behavior.
